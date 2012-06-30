@@ -1,7 +1,7 @@
 {
-   "name": "serenade",
-   "main": "src/serenade",
-   "version": "0.2.1",
+   "name": "jakobmattsson-serenade",
+   "main": "extras/serenade.0.2.1.js",
+   "version": "0.2.1-45",
    "description": "JavaScript client side MVC framework",
    "keywords": [ "MVC", "data bingings", "client-side" ],
    "maintainers": [
@@ -44,6 +44,7 @@
    },
    "scripts": {
        "build": "cake build",
+       "prepublish": "cake build",
        "test": "mocha test/*.spec.coffee test/**/*.spec.coffee",
        "examples": "coffee web.coffee"
    }
