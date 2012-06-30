@@ -31,7 +31,7 @@
            "url": "git@github.com:elabs/serenade.js.git"
        }
    ],
-   "dependencies": {
+   "devDependencies": {
        "mocha": "1.x.x",
        "chai": "0.5.x",
        "jsdom": ">= 0.2",
