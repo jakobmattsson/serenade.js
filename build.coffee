@@ -54,7 +54,7 @@ Build =
           exports.Serenade = Serenade;
         } else { root.Serenade = Serenade }
       }(this));
-    """
+    """.replace(/require/g, 'localRequire')
 
   unpacked: (callback) ->
     Build.compile (code) -> callback(header + '\n' + code)
