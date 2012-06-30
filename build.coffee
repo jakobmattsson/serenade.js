@@ -47,6 +47,11 @@ Build =
 
         if(typeof define === 'function' && define.amd) {
           define(function() { return Serenade });
+        } else if (typeof exports !== 'undefined') {
+          if (typeof module !== 'undefined' && module.exports) {
+            exports = module.exports = Serenade;
+          }
+          exports.Serenade = Serenade;
         } else { root.Serenade = Serenade }
       }(this));
     """
