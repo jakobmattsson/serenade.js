@@ -38,7 +38,8 @@ Build =
         };
       """
     callback """
-      (function(root) {
+      (function() {
+        var root = this;
         var Serenade = function() {
           function require(path){ return require[path]; }
           #{requires}
@@ -53,7 +54,7 @@ Build =
           }
           exports.Serenade = Serenade;
         } else { root.Serenade = Serenade }
-      }(this));
+      }());
     """.replace(/require/g, 'localRequire')
 
   unpacked: (callback) ->
