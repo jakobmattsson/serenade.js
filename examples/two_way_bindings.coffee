@@ -28,6 +28,15 @@ Serenade.view 'form', '''
           option "World Domination"
     p
       label
+        " Multiple"
+        br
+        select[binding:change=@multiple multiple="multple"]
+          option[value="none"] ""
+          option[value="one"] "Cats"
+          option[value="two"] "Serenade.js"
+          option[value="three"] "World Domination"
+    p
+      label
         "Body (click Update to see this change)"
         br
         textarea[binding=@body cols="60" rows="8"]
@@ -42,6 +51,7 @@ Serenade.view 'result', '''
     p "Active: " @active
     p "Length: " @length
     p "Category: " @category
+    p "Multiple: " @multiple
     p "Body: " @body
 '''
 

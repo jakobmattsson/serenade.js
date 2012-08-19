@@ -1,7 +1,7 @@
 {
    "name": "jakobmattsson-serenade",
    "main": "extras/serenade.0.2.1.js",
-   "version": "0.2.1-45",
+   "version": "0.2.1-47",
    "description": "JavaScript client side MVC framework",
    "keywords": [ "MVC", "data bingings", "client-side" ],
    "maintainers": [

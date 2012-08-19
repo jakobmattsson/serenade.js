@@ -34,6 +34,12 @@ Property =
         set(model, ast.value, element.checked)
       else if element.type is "radio"
         set(model, ast.value, element.getAttribute("value")) if element.checked
+      else if element.type is "select-multiple"
+        values = []
+        for o in element.options
+          if o.selected
+            values.push o.value
+        set(model, ast.value, values)
       else
         set(model, ast.value, element.value)
 
@@ -44,6 +50,13 @@ Property =
       else if element.type is "radio"
         val = get(model, ast.value)
         element.checked = true if val == element.getAttribute("value")
+      else if element.type is "select-multiple"
+        val = get(model, ast.value)
+        values = {}
+        for v in val
+          values[v] = true
+        for option in element.options
+          option.selected = values[option.value]?
       else
         val = get(model, ast.value)
         val = "" if val == undefined
